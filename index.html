@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Felipe Prado | Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Candy+Beans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Happy+Memories&display=swap" rel="stylesheet">
+
+
+  <style>
+    .video-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 10px;
+    }
+
+    .video {
+      flex: 0 0 auto;
+      width: 360px;
+      height: 203px;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#quem-sou-eu">Página Inicial</a></li>
+        <li><a href="#meus-trabalhos">Meus Trabalhos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h1>Felipe Prado</h1>
+    <hr />
+    <p class="efeito-titulo"data-text="Cinegrafista, editor e designer gráfico">
+      Cinegrafista, editor e designer gráfico
+    </p>
+  </section>
+
+  <section class="quem-sou-eu" id="quem-sou-eu">
+    <div class="container">
+      <div class="foto">
+        <img src="imagens/imagem-felipe.avif" alt="Foto de Felipe Prado"class="foto-hover" />
+      </div>
+      <div class="descricao">
+        <h2>Quem sou eu?</h2>
+        <p>
+          Meu nome é Felipe Prado, mais conhecido como Bolacha, tenho 26 anos e sou natural de Mairiporã, cidade onde vivo atualmente.
+          Desde cedo, minha curiosidade pelas artes foi um traço marcante na minha trajetória.
+          Comecei como músico, o que despertou meu interesse pelo audiovisual, área à qual decidi me dedicar integralmente.
+        </p>
+        <p>
+          Ao longo da minha carreira, participei da criação de projetos como a divulgação de espaços para eventos e a produção de um podcast regional.
+          Posteriormente, foquei em produzir vídeos e cobrir eventos corporativos, ampliando minha experiência no campo audiovisual.
+          Sou uma pessoa comprometida, com facilidade para trabalhar em equipe, e estou sempre em busca de novos conhecimentos e formas de aprimorar minhas habilidades.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="linha-branca">
+
+  <section class="meus-trabalhos" id="meus-trabalhos">
+    <div class="container">
+      <h3>MEUS TRABALHOS</h3>
+      <div class="bloco-videos">
+        <h4>Captei e Editei</h4>
+        <div class="video-scroll">
+          <div class="video-item">
+  <div class="video" id="player1"></div>
+  <p class="video-title">Aftermovie Ayvens</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player2"></div>
+  <p class="video-title">Financial Innovation 2024</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player3"></div>
+  <p class="video-title">Inauguração Federzoni Laranjeiras</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player4"></div>
+  <p class="video-title">Institucional FESB</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player5"></div>
+  <p class="video-title">Documentário Não é só apertar um botão</p>
+</div>
+
+        </div>
+      </div>
+
+      <hr class="linha-preta">
+      <h4>Captei ou Editei</h4>
+      <div class="video-scroll">
+        <div class="video-item">
+  <div class="video" id="player6"></div>
+  <p class="video-title">Morena Pedro Ferreira</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player7"></div>
+  <p class="video-title">Teaser - Corrida Pink Blue</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player8"></div>
+  <p class="video-title">8°Passeio e Encontro de Ferraristas</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player9"></div>
+  <p class="video-title">Inauguração Distrito Anhembi</p>
+</div>
+<div class="video-item">
+  <div class="video" id="player10"></div>
+  <p class="video-title">After Movie Formula E</p>
+</div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- YouTube API + seu JS externo -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="youtube-player.js"></script>
+  <hr class="linha-white">
+  <hr class="linha-black">
+<section class="depoimentos">
+  <h3>Depoimentos de Clientes</h3>
+
+  <div class="depoimento" id="depoimentos">
+    <img src="imagens/eliandro.avif" alt="Eliandro Moura"class="foto-hover">
+    <div class="texto">
+      <p class="nome"><em>Eliandro Moura</em></p>
+      <p>"Luiz Felipe é um editor completo, ao meu ver. Ágil, prestativo, atencioso e, claro, muito caprichoso. Com sua expertise em edição, sempre contribui para elevar o nível dos meus projetos."</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="depoimento invertido">
+    <img src="imagens/tiago.avif" alt="Tiago Borges"class="foto-hover">
+    <div class="texto">
+      <p class="nome"><em>Tiago Borges</em></p>
+      <p>O “Bolacha” é um profissional excepcional. Sua dedicação, habilidade técnica e atenção aos detalhes fazem toda a diferença. Além de ser extremamente ágil e comprometido, ele traz insights valiosos que enriquecem o resultado final. Trabalhar com ele sempre eleva a qualidade dos meus projetos e me dá confiança no sucesso do que estamos criando.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="depoimento">
+    <img src="imagens/juliana.avif" alt="Juliana Minarelli"class="foto-hover">
+    <div class="texto">
+      <p class="nome"><em>Juliana Minarelli</em></p>
+      <p>"Felipe é um editor incrível! Capta exatamente o que você precisa e é muito profissional. Uma pessoa muito aberta ao diálogo. Recomendo o trabalho dele!"</p>
+    </div>
+  </div>
+</section>
+  <hr class="linha-negra">
+  <hr class="linha-white">
+<section class="contato" id="contato">
+  <h2>Contate-me</h2>
+  <form class="formulario-contato">
+    <div class="linha">
+      <div class="campo">
+        <label for="nome">*Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Insira seu nome aqui..." required>
+      </div>
+      <div class="campo">
+        <label for="sobrenome">*Sobrenome</label>
+        <input type="text" id="sobrenome" name="sobrenome" placeholder="Insira seu sobrenome aqui..." required>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="email">*Email</label>
+      <input type="email" id="email" name="email" placeholder="Insira seu e-mail aqui..." required>
+    </div>
+
+    <div class="campo">
+      <label for="mensagem">*Escreva sua mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="6" placeholder="Dê um exemplo detalhado" required></textarea>
+    </div>
+    <button type="submit" class="botao-enviar">Enviar</button>
+    <p class="mensagem-obrigatoria">*Campo obrigatório</p>
+
+  </form>
+</section>
+
+
+</body>
+<footer class="redes-sociais">
+  <a href="https://api.whatsapp.com/send/?phone=5511992302945&text=Olá%2C+Bolacha%21+Gostaria+de+saber+mais+sobre+seus+serviços+audiovisuais%21&type=phone_number&app_absent=0" target="_blank">
+    <img src="imagens/whatsapp-logo.png" alt="WhatsApp" />
+  </a>
+  <a href="https://www.instagram.com/bolachamp4?igsh=bDBybzAzZG51OWlo" target="_blank">
+    <img src="imagens/instagram-logo.png" alt="Instagram" />
+  </a>
+  <a href="https://www.linkedin.com/in/luiz-felipe-do-prado-1187b2140/" target="_blank">
+    <img src="imagens/linkedin-logo.png" alt="LinkedIn" />
+  </a>
+</footer>
+
+</html>
