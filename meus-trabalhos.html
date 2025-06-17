@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Candy+Beans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Happy+Memories&display=swap" rel="stylesheet">
 
-
   <style>
     .video-scroll {
       display: flex;
@@ -37,71 +36,81 @@
       </ul>
     </nav>
   </header>
-<section class="meus-trabalhos" id="meus-trabalhos">
+
+  <section class="meus-trabalhos" id="meus-trabalhos">
     <div class="container">
-          <hr class="linha-branca">
+      <hr class="linha-branca">
       <h3>MEUS TRABALHOS</h3>
-        <hr class="linha-branca">
+      <hr class="linha-branca">
+
       <div class="bloco-videos">
         <h4>Captei e Editei</h4>
         <div class="video-grid">
           <div class="video-item">
-  <div class="video" id="player1"></div>
-  <p class="video-title">Aftermovie Ayvens</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player2"></div>
-  <p class="video-title">Financial Innovation 2024</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player3"></div>
-  <p class="video-title">Inauguração Federzoni Laranjeiras</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player4"></div>
-  <p class="video-title">Institucional FESB</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player5"></div>
-  <p class="video-title">Documentário Não é só apertar um botão</p>
-</div>
-
+            <div class="video" id="player1"></div>
+            <p class="video-title">Aftermovie Ayvens</p>
+          </div>
+          <div class="video-item">
+            <div class="video" id="player2"></div>
+            <p class="video-title">Financial Innovation 2024</p>
+          </div>
+          <div class="video-item">
+            <div class="video" id="player3"></div>
+            <p class="video-title">Inauguração Federzoni Laranjeiras</p>
+          </div>
+          <div class="video-item">
+            <div class="video" id="player4"></div>
+            <p class="video-title">Institucional FESB</p>
+          </div>
+          <div class="video-item">
+            <div class="video" id="player5"></div>
+            <p class="video-title">Documentário Não é só apertar um botão</p>
+          </div>
         </div>
       </div>
+
       <hr class="linha-preta">
       <h4>Captei ou Editei</h4>
       <div class="video-grid">
         <div class="video-item">
-  <div class="video" id="player6"></div>
-  <p class="video-title">Morena Pedro Ferreira</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player7"></div>
-  <p class="video-title">Teaser - Corrida Pink Blue</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player8"></div>
-  <p class="video-title">8°Passeio e Encontro de Ferraristas</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player9"></div>
-  <p class="video-title">Inauguração Distrito Anhembi</p>
-</div>
-<div class="video-item">
-  <div class="video" id="player10"></div>
-  <p class="video-title">After Movie Formula E</p>
-</div>
-
+          <div class="video" id="player6"></div>
+          <p class="video-title">Morena Pedro Ferreira</p>
+        </div>
+        <div class="video-item">
+          <div class="video" id="player7"></div>
+          <p class="video-title">Teaser - Corrida Pink Blue</p>
+        </div>
+        <div class="video-item">
+          <div class="video" id="player8"></div>
+          <p class="video-title">8°Passeio e Encontro de Ferraristas</p>
+        </div>
+        <div class="video-item">
+          <div class="video" id="player9"></div>
+          <p class="video-title">Inauguração Distrito Anhembi</p>
+        </div>
+        <div class="video-item">
+          <div class="video" id="player10"></div>
+          <p class="video-title">After Movie Formula E</p>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- YouTube API + seu JS externo -->
+  <!-- Botão de Voltar -->
+  <div style="margin-top: 20px; text-align: center;">
+    <a href="index.html" class="botao-voltar">Voltar</a>
+  </div>
+  <hr class="linha-black">
+
+  <!-- Scripts: YouTube API + JS personalizado + inicializador -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="youtube-player.js"></script>
-
-        <div style="margin-top: 20px; text-align: center;">
-  <a href="index.html" class="botao-voltar">Voltar</a>
-</div>
-  <hr class="linha-black">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof mostrarVideo === 'function') {
+        mostrarVideo(0); // se estiver usando o carrossel
+      }
+    });
+  </script>
+</body>
+</html>
