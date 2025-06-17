@@ -32,7 +32,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #999;
+  color: rgb(224, 243, 86);
 }
 
 .intro {
@@ -47,7 +47,7 @@ body {
 
 .intro hr {
   margin: 10px 0 20px;
-  border: 2px solid #fff;
+  border: 2px solid  rgb(255, 224, 87);;
   width: 90%;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .quem-sou-eu {
-  border-top: 4px solid #fff;
+  border-top: 4px solid  rgb(255, 224, 87);;
   padding: 60px 40px;
 }
 
@@ -65,28 +65,40 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
+  justify-content: start;
+  gap: 20px;
+}
+.quem-sou-eu .texto {
+  flex: 1; /* mais espaço para o texto */
+  font-size: 1.8rem; /* ou maior se quiser destacar */
+  line-height: 1.8;   /* deixa mais fluido e legível */
 }
 
+
 .foto img {
-  width: 220px;
-  height: 220px;
+  width: 300px;
+  flex-shrink: 0;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
+  margin-left: 180px;
 }
 
 .descricao {
+  flex: 1;
+  margin: 0 auto;
+  text-align: left;
   max-width: 700px;
 }
 
-.descricao h3 {
-  font-size: 28px;
+.descricao h2 {
+  font-size: 32px;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 
 .descricao p {
+  font-size: 20px;
   margin-bottom: 15px;
   font-weight: 300;
 }
@@ -133,7 +145,7 @@ body {
 }
 
 .video-scroll::-webkit-scrollbar-thumb {
-  background-color: #ffffff;
+  background-color: rgb(255, 224, 87);
   border-radius: 4px;
 }
 
@@ -152,7 +164,7 @@ body {
 }
 .linha-branca {
   border: none;
-  border-top: 4px solid white;
+  border-top: 4px solid  rgb(255, 224, 87);
   margin: 30px 0;
   width: 100%;
 }
@@ -202,15 +214,24 @@ body {
 }
 
 .depoimento img {
-  width: 200px;
-  height: 200px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  border: 4px solid transparent;
+  transition: border 0.3s ease, transform o.3s ease;
+}
+
+.depoimento img:hover{
+  border: 4px solid #eaf666;
+  transform: scale(1.03);
 }
 
 .depoimento .texto {
   max-width: 600px;
+  font-size: 1.2rem;
+  line-height:1.8;
 }
 
 .depoimento .texto .nome {
@@ -254,7 +275,7 @@ hr {
 }
 .linha-white {
   border: none;
-  border-top: 12px solid white;
+  border-top: 12px solid rgb(255, 224, 87);
   width: 100%;
   margin: 0 auto 20px auto;
 }
@@ -317,13 +338,13 @@ textarea::placeholder {
   font-size: 14px;
   margin-top: 6px;
   margin-left: 4px;
-  color: rgb(191, 191, 232);
+  color: rgb(255, 224, 87);
   font-weight: 300;
   font-style: italic;
   text-align: left;
 }
 .redes-sociais {
-  background-color: white;
+  background-color:  rgb(255, 224, 87);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -390,7 +411,7 @@ img.foto-hover:hover {
   top: 0; left: 0;
   width: 0;
   height: 100%;
-  color: #ecf666; /* cor que vai aparecer da esquerda para direita */
+  color: rgb(224, 243, 86); /* cor que vai aparecer da esquerda para direita */
   overflow: hidden;
   white-space: nowrap;
   transition: width 1s ease;
@@ -399,4 +420,13 @@ img.foto-hover:hover {
 
 .efeito-titulo:hover::before {
   width: 100%;
+}
+.video {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.video:hover {
+  transform: scale(1.05);
+  z-index: 10;
 }
