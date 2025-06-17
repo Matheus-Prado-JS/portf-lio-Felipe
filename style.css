@@ -131,30 +131,31 @@ body {
   text-align: center;
 }
 
-.video-scroll {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+  }
 
-.video-scroll::-webkit-scrollbar {
-  height: 8px;
-}
+  .video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.video-scroll::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 224, 87);
-  border-radius: 4px;
-}
+  .video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+  }
 
-.video {
-  flex: 0 0 auto;
-  width: 320px;
-  aspect-ratio: 16 / 9;
-  scroll-snap-align: start;
-}
+  .video-title {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+  }
 
 .video iframe {
   width: 100%;
@@ -162,6 +163,12 @@ body {
   border-radius: 8px;
   border: none;
 }
+.video-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .linha-branca {
   border: none;
   border-top: 4px solid  rgb(255, 224, 87);
@@ -374,25 +381,25 @@ img.foto-hover:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 .botao-enviar {
-  width: 170px;
-  padding: 8px 12px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: rgb(56, 56, 56);
-  background-color: white;
-  border: 4px solid black;
-  border-radius: 20px;
-  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(255, 224, 87);
+  border: 3px solid black;
+  border-radius: 30px;
+  text-decoration: none;
   transition: all 0.3s ease-in-out;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .botao-enviar:hover {
-  background-color: rgb(224, 243, 86);
-  color: rgb(34, 34, 34);
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
-  transform: scale(1.03);
+  background-color: black;
+  color: rgb(255, 224, 87);
+  transform: scale(1.05);
+  border-color: rgb(255, 224, 87);
 }
+
 .efeito-titulo {
   position: relative;
   display: inline-block;
@@ -411,7 +418,7 @@ img.foto-hover:hover {
   top: 0; left: 0;
   width: 0;
   height: 100%;
-  color: rgb(224, 243, 86); /* cor que vai aparecer da esquerda para direita */
+  color: rgb(243, 243, 86); /* cor que vai aparecer da esquerda para direita */
   overflow: hidden;
   white-space: nowrap;
   transition: width 1s ease;
@@ -429,4 +436,75 @@ img.foto-hover:hover {
 .video:hover {
   transform: scale(1.05);
   z-index: 10;
+}
+.botao-ver-mais {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(255, 224, 87);
+  border: 3px solid black;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.botao-ver-mais:hover {
+  background-color: black;
+  color: rgb(255, 224, 87);
+  transform: scale(1.05);
+  border-color: rgb(255, 224, 87);
+}
+.botao-voltar {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(255, 224, 87);
+  border: 3px solid black;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.botao-voltar:hover {
+  background-color: black;
+  color: rgb(255, 224, 87);
+  transform: scale(1.05);
+  border-color: rgb(255, 224, 87);
+}
+.video-slide.preview-esquerda,
+.video-slide.preview-direita {
+  opacity: 0.4;
+  filter: blur(3px);
+  transform: scale(0.8);
+  z-index: 0;
+}
+
+.video-slide.preview-esquerda {
+  left: -105%;
+}
+
+.video-slide.preview-direita {
+  left: 105%;
+}
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: visible; /* <- este cara esconde os previews */
+}
+.video-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+  pointer-events: none; /* impede clique nos previews */
+}
+
+.video-slide.ativo {
+  z-index: 2;
+  pointer-events: auto; /* só o ativo pode ser clicado */
 }
