@@ -25,3 +25,23 @@ function onYouTubeIframeAPIReady() {
     });
   });
 }
+function mostrarVideo(index) {
+  const slides = document.querySelectorAll('.video-slide');
+
+  slides.forEach((slide, i) => {
+    slide.classList.remove('ativo', 'preview-esquerda', 'preview-direita');
+    slide.style.display = 'none';
+  });
+
+  const anterior = (index - 1 + slides.length) % slides.length;
+  const proximo = (index + 1) % slides.length;
+
+  slides[anterior].classList.add('preview-esquerda');
+  slides[anterior].style.display = 'block';
+
+  slides[index].classList.add('ativo');
+  slides[index].style.display = 'block';
+
+  slides[proximo].classList.add('preview-direita');
+  slides[proximo].style.display = 'block';
+}
