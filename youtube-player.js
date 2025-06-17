@@ -45,5 +45,3 @@ function mostrarVideo(index) {
   slides[proximo].classList.add('preview-direita');
   slides[proximo].style.display = 'block';
 }
-<script src="https://www.youtube.com/iframe_api"></script>
-<script src="youtube-player.js"></script>
