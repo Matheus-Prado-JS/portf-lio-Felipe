@@ -1,4 +1,4 @@
-function onYouTubeIframeAPIReady() {
+window.onYouTubeIframeAPIReady = function () {
   const videos = [
     { id: '0exDW7-3Mj4', start: 2, container: 'player1' },
     { id: 'kkTVmJmHNzY', start: 0, container: 'player2' },
@@ -13,18 +13,22 @@ function onYouTubeIframeAPIReady() {
   ];
 
   videos.forEach(video => {
-    new YT.Player(video.container, {
-      videoId: video.id,
-      width: '100%',
-      height: '100%',
-      playerVars: {
-        start: video.start,
-        modestbranding: 1,
-        rel: 0
-      }
-    });
+    const element = document.getElementById(video.container);
+    if (element) {
+      new YT.Player(video.container, {
+        videoId: video.id,
+        width: '100%',
+        height: '100%',
+        playerVars: {
+          start: video.start,
+          modestbranding: 1,
+          rel: 0
+        }
+      });
+    }
   });
-}
+};
+
 function mostrarVideo(index) {
   const slides = document.querySelectorAll('.video-slide');
 
