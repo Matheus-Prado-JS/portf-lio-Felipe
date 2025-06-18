@@ -57,7 +57,6 @@ body {
 }
 
 .quem-sou-eu {
-  border-top: 4px solid  rgb(255, 224, 87);;
   padding: 60px 40px;
 }
 
@@ -130,64 +129,28 @@ body {
   text-transform: uppercase;
   text-align: center;
 }
-
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
-    padding: 10px 0;
-  }
-
-  .video-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .video {
     width: 100%;
     aspect-ratio: 16 / 9;
     background-color: #000;
   }
-
-  .video-title {
-    margin-top: 8px;
-    font-size: 1rem;
-    color: #fff;
-    text-align: center;
-  }
-
 .video iframe {
   width: 100%;
   height: 100%;
   border-radius: 8px;
   border: none;
 }
-.video-item {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .linha-branca {
   border: none;
-  border-top: 4px solid  rgb(255, 224, 87);
   margin: 30px 0;
   width: 100%;
-}
-.bloco-videos {
-  padding: 0;
-  border-radius: 0;
-  margin-top: 40px;
-}
-
-.bloco-videos .video-scroll {
-  margin-bottom: 20px;
+  overflow: hidden;
 }
 .linha-preta {
   border: none;
-  border-top: 30px solid black;
   margin: 20px 0;
+  width: 100%;
+  overflow: hidden;
 }
 .meus-trabalhos .container{
   display:block;
@@ -276,21 +239,21 @@ hr {
 }
 .linha-negra{
   border: none;
-  border-top: 12px solid black;
   width: 100%;
   margin: 0 auto 20px auto;
+  overflow: hidden;
 }
 .linha-white {
   border: none;
-  border-top: 12px solid rgb(255, 224, 87);
   width: 100%;
   margin: 0 auto 20px auto;
+  overflow: hidden;
 }
 .linha-black{
   border:none;
-  border-top: 4px solid black;
   width:100%;
   margin: 0 auto 1px auto;
+  overflow: hidden;
 }
 .contato h2 {
   font-size: 32px;
@@ -456,25 +419,6 @@ img.foto-hover:hover {
   transform: scale(1.05);
   border-color: rgb(255, 224, 87);
 }
-.botao-voltar {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: black;
-  background-color: rgb(255, 224, 87);
-  border: 3px solid black;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.botao-voltar:hover {
-  background-color: black;
-  color: rgb(255, 224, 87);
-  transform: scale(1.05);
-  border-color: rgb(255, 224, 87);
-}
 .video-slide.preview-esquerda,
 .video-slide.preview-direita {
   opacity: 0.4;
@@ -507,4 +451,111 @@ img.foto-hover:hover {
 .video-slide.ativo {
   z-index: 2;
   pointer-events: auto; /* só o ativo pode ser clicado */
+}
+/* Linha aparecendo da esquerda para direita */
+.linha-animada {
+  width: 0;
+  border-top-width: inherit;
+  border-top-style: inherit;
+  border-top-color: inherit;
+  transition: width 1.2s ease-out;
+  display: block;
+}
+
+.linha-animada.ativa {
+  width: 100%;
+}
+
+/* Animação da esquerda */
+@keyframes entrarEsquerda {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animação da direita */
+@keyframes entrarDireita {
+  0% {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Classes animadas */
+.deslizar-esquerda {
+  opacity: 0;
+}
+
+.deslizar-esquerda.ativa {
+  animation: entrarEsquerda 2.5s ease-out forwards;
+}
+
+.deslizar-direita {
+  opacity: 0;
+}
+
+.deslizar-direita.ativa {
+  animation: entrarDireita 2.5s ease-out forwards;
+}
+.linha {
+  height: 4px;
+  width: 100%;
+  background-color: transparent; /* Importante! Remove o fundo fixo */
+  position: relative;
+  overflow: hidden;
+  margin: 40px auto;
+}
+
+/* Para linhas pretas e variantes */
+.linha-white {
+  color: rgb(255, 224, 87);
+}
+
+.linha-black {
+  color: black;
+  height: 4px;
+}
+
+.linha-negra {
+  color: black;
+  height: 12px;
+}
+.linha-branca{
+  color: rgb(255,224,87);
+
+}
+/* Linha "se formando" da esquerda */
+.linha::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: currentColor; /* herda a cor do texto — útil para classe */
+  transition: width 2s ease-out;
+}
+
+/* Ativa a animação */
+.linha.ativa::before {
+  width: 100%;
+}
+
+/* Keyframe da animação */
+@keyframes desenharLinha {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
