@@ -27,7 +27,7 @@
 <body>
   
   <header>
-    <nav class="navbar">
+    <nav class="navbar entrar-cima">
       <ul>
         <li><a href="#quem-sou-eu">Página Inicial</a></li>
         <li><a href="#meus-trabalhos">Meus Trabalhos</a></li>
@@ -38,9 +38,9 @@
   </header>
 
   <section class="intro">
-    <h1>Felipe Prado</h1>
+    <h1 class="entrar-cima">Felipe Prado</h1>
     <div class="linha linha-branca linha-animada"></div>
-    <p class="efeito-titulo"data-text="Cinegrafista, editor e designer gráfico">
+    <p class="efeito-titulo entrar-baixo"data-text="Cinegrafista, editor e designer gráfico">
       Cinegrafista, editor e designer gráfico
     </p>
   </section>
@@ -50,8 +50,8 @@
       <div class="foto">
         <img src="imagens/imagem-felipe.avif" alt="Foto de Felipe Prado"class="foto-hover deslizar-esquerda" />
       </div>
-      <div class="descricao">
-        <h2>Quem sou eu?</h2>
+      <div class="descricao fade-blur">
+        <h2 class="entrar-cima">Quem sou eu?</h2>
         <p>
           Meu nome é Felipe Prado, mais conhecido como Bolacha, tenho 26 anos e sou natural de Mairiporã, cidade onde vivo atualmente.
           Desde cedo, minha curiosidade pelas artes foi um traço marcante na minha trajetória.
@@ -70,7 +70,7 @@
       <!-- Seção "Meus Trabalhos" com carrossel estilo Stories -->
 <section class="meus-trabalhos" id="meus-trabalhos">
   <div class="container">
-    <h3>MEUS TRABALHOS</h3>
+    <h3 class="entrar-cima">MEUS TRABALHOS</h3>
 
     <div class="carrossel">
       <button class="seta esquerda" onclick="mudarVideo(-1)">&#10094;</button>
@@ -219,46 +219,47 @@
     </section>
   <div class="linha linha-white linha-animada"></div>
   <div class="linha linha-black linha-animada"></div>
-<section class="depoimentos">
-  <h3>Depoimentos de Clientes</h3>
-
+<section class="depoimentos fade-blur">
+  <h3 class="entrar-cima">Depoimentos de Clientes</h3>
+   <div class="depoimentos-observaveis">
   <div class="depoimento" id="depoimentos">
     <img src="imagens/eliandro.avif" alt="Eliandro Moura"class="foto-hover deslizar-esquerda">
     <div class="texto">
-      <p class="nome"><em>Eliandro Moura</em></p>
+      <p class="nome entrar-cima"><em>Eliandro Moura</em></p>
       <p>"Luiz Felipe é um editor completo, ao meu ver. Ágil, prestativo, atencioso e, claro, muito caprichoso. Com sua expertise em edição, sempre contribui para elevar o nível dos meus projetos."</p>
     </div>
   </div>
 
   <hr>
 
-  <div class="depoimento invertido">
+  <div class="depoimento invertido fade-blur">
     <img src="imagens/tiago.avif" alt="Tiago Borges"class="foto-hover deslizar-direita">
     <div class="texto">
-      <p class="nome"><em>Tiago Borges</em></p>
+      <p class="nome entrar-baixo"><em>Tiago Borges</em></p>
       <p>O “Bolacha” é um profissional excepcional. Sua dedicação, habilidade técnica e atenção aos detalhes fazem toda a diferença. Além de ser extremamente ágil e comprometido, ele traz insights valiosos que enriquecem o resultado final. Trabalhar com ele sempre eleva a qualidade dos meus projetos e me dá confiança no sucesso do que estamos criando.</p>
     </div>
   </div>
 
   <hr>
 
-  <div class="depoimento">
+  <div class="depoimento fade-blur">
     <img src="imagens/juliana.avif" alt="Juliana Minarelli"class="foto-hover deslizar-esquerda">
     <div class="texto">
-      <p class="nome"><em>Juliana Minarelli</em></p>
+      <p class="nome entrar-cima"><em>Juliana Minarelli</em></p>
       <p>"Felipe é um editor incrível! Capta exatamente o que você precisa e é muito profissional. Uma pessoa muito aberta ao diálogo. Recomendo o trabalho dele!"</p>
     </div>
+  </div>
   </div>
 </section>
   <div class="linha linha-negra linha-animada"></div>
   <div class="linha linha-white linha-animada"></div>
 <section class="contato" id="contato">
-  <h2>Contate-me</h2>
+  <h2 class="entrar-cima">Contate-me</h2>
   <form class="formulario-contato"action="https://formsubmit.co/hpmatheus640@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Nova mensagem do portfólio!">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="box">
-    <div class="linha">
+    <div class="grupo-linha">
       <div class="campo">
         <label for="nome">*Nome</label>
         <input type="text" id="nome" name="nome" placeholder="Insira seu nome aqui..." required>
@@ -284,20 +285,52 @@
   </form>
 </section>
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const linhas = document.querySelectorAll('.linha-animada');
     const entradasEsq = document.querySelectorAll('.deslizar-esquerda');
     const entradasDir = document.querySelectorAll('.deslizar-direita');
+    const fades = document.querySelectorAll('.fade-blur');
 
     setTimeout(() => {
-      linhas.forEach(linha => linha.classList.add('ativa'));
+      linhas.forEach((linha, i) => {
+        setTimeout(() => linha.classList.add('ativa'), i * 300);
+      });
+
       entradasEsq.forEach(el => el.classList.add('ativa'));
       entradasDir.forEach(el => el.classList.add('ativa'));
-    }, 500);
-  });
-  const linhas = document.querySelectorAll('.animar-linha');
-linhas.forEach(linha => linha.classList.add('ativa'));
 
+      fades.forEach((el, i) => {
+        setTimeout(() => el.classList.add('ativa'), 400 + i * 300);
+      });
+    }, 300); // pode até reduzir aqui se quiser
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.entrar-cima, .entrar-baixo').forEach(el => {
+      el.style.opacity = '1'; // garante que visibilidade ocorra
+    });
+  });
+</script>
+<script>
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // ativa os elementos com animação dentro da seção
+        entry.target.querySelectorAll('.entrar-cima, .entrar-baixo').forEach(el => {
+          el.classList.add('visivel');
+        });
+        observer.unobserve(entry.target); // só ativa uma vez
+      }
+    });
+  }, {
+    threshold: 0.5 // ativa quando metade da seção estiver visível
+  });
+
+  const secaoDepoimentos = document.querySelector('.depoimentos-observaveis');
+  if (secaoDepoimentos) {
+    observer.observe(secaoDepoimentos);
+  }
 </script>
 
 
