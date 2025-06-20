@@ -541,7 +541,7 @@ img.foto-hover:hover {
   left: 0;
   height: 100%;
   width: 0%;
-  background-color: currentColor; /* herda a cor do texto — útil para classe */
+  background-color: currentColor; /* herda a cor do texto */
   transition: width 2s ease-out;
 }
 
@@ -558,4 +558,53 @@ img.foto-hover:hover {
   100% {
     width: 100%;
   }
+}
+.fade-blur {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, filter 1.2s ease, transform 1.2s ease;
+}
+
+.fade-blur.ativa {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+.grupo-linha {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@keyframes subir {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descer {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.entrar-cima {
+  opacity: 0;
+  animation: descer 1.4s ease forwards;
+}
+
+.entrar-baixo {
+  opacity: 0;
+  animation: subir 1.4s ease forwards;
 }
