@@ -608,3 +608,78 @@ img.foto-hover:hover {
   opacity: 0;
   animation: subir 1.4s ease forwards;
 }
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .intro {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .intro h1 {
+    font-size: 36px;
+  }
+
+  .efeito-titulo {
+    font-size: 1rem;
+  }
+
+  .foto img {
+    margin-left: 0;
+    width: 200px;
+    height: 200px;
+  }
+
+  .descricao {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .carrossel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .seta.esquerda,
+  .seta.direita {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 10px;
+  }
+
+  .video-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .video-slide.preview-esquerda,
+  .video-slide.preview-direita {
+    display: none !important;
+  }
+
+  .depoimento {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .depoimento.invertido {
+    flex-direction: column;
+  }
+
+  .depoimento .texto {
+    align-items: center;
+    text-align: center;
+  }
+
+  .depoimento.invertido .texto,
+  .depoimento .texto .nome {
+    text-align: center;
+    align-self: center;
+  }
+}
