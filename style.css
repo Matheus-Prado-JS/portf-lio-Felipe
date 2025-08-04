@@ -609,52 +609,41 @@ img.foto-hover:hover {
   animation: subir 1.4s ease forwards;
 }
 @media (max-width: 768px) {
-  .navbar ul {
+  .quem-sou-eu .container {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .intro {
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  .intro h1 {
-    font-size: 36px;
-  }
-
-  .efeito-titulo {
-    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
   }
 
   .foto img {
     margin-left: 0;
+    margin-bottom: 20px;
     width: 200px;
     height: 200px;
   }
 
   .descricao {
-    padding: 0 10px;
     text-align: center;
+    max-width: 100%;
+    padding: 0 10px;
   }
 
+  .descricao p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
   .carrossel {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .seta.esquerda,
-  .seta.direita {
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: 10px;
+    max-width: 100%;
+    padding: 0 10px;
   }
 
   .video-container {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    aspect-ratio: 16 / 9;
   }
 
   .video-slide.preview-esquerda,
@@ -662,24 +651,11 @@ img.foto-hover:hover {
     display: none !important;
   }
 
-  .depoimento {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .depoimento.invertido {
-    flex-direction: column;
-  }
-
-  .depoimento .texto {
-    align-items: center;
-    text-align: center;
-  }
-
-  .depoimento.invertido .texto,
-  .depoimento .texto .nome {
-    text-align: center;
-    align-self: center;
+  .seta {
+    position: static;
+    margin: 10px;
+    font-size: 1.5rem;
   }
 }
+
+
